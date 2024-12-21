@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>제1발광 하드클 난이도표</title>
+		<link rel="stylesheet" hype=style.css>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var target;
+				var root = document.querySelector('downloadImage');
+				var bounds = [
+					{ label: '입문', group:	'group-1', groupBtn: { size [32, 75], pos: [142, 30]}, x: [524, 917, 1310], y: [30, 70] },
+					{ label: '백5', group:	'group-2', groupBtn: { size [32, 195], pos: [142, 173]}, x: [524, 917, 1310], y: [173, 214, 251, 291, 324] },
+					{ label: '백4', group:	'group-3', groupBtn: { size [32, 230], pos: [142, 436]}, x: [524, 917, 1310], y: [436, 470, 506, 542, 583, 624] },
+					{ label: '백3', group:	'group-4', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '백2', group:	'group-5', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '백1', group:	'group-6', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '황5', group:	'group-7', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '황4', group:	'group-8', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '황3', group:	'group-9', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '황2', group:	'group-10', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '황1', group:	'group-11', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '녹4', group:	'group-12', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '녹3', group:	'group-13', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '녹2', group:	'group-14', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '녹1', group:	'group-15', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '청4', group:	'group-16', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '청3', group:	'group-17', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '청2', group:	'group-18', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '청1', group:	'group-19', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '동4', group:	'group-20', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '동3', group:	'group-21', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '동2', group:	'group-22', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '동1', group:	'group-23', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '적4', group:	'group-24', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '적3', group:	'group-25', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '적2', group:	'group-26', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '적1', group:	'group-27', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '자4', group:	'group-28', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '자3', group:	'group-29', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '자2', group:	'group-30', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '자1', group:	'group-31', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '흑4', group:	'group-32', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '흑3', group:	'group-33', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '흑2', group:	'group-34', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '흑1', group:	'group-35', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ label: '극', group:	'group-36', groupBtn: { size [32], pos: [142]}, x: [524, 917, 1310], y: [] },
+					{ x: [1260], y: [428, 507, 684, 1018, 1353, 1609, 1687, 1865, 1943, 2121] }]
+				var excludes = [[917, 624], [1310, 624], [], []];
+
+				for (var a in bounds) {
+					var area = bounds[a];
+
+					if (area.groupBtn) {
+						var d = document .createElement('div');
+						d.classList.add('clearArea')
+						d.classList.add('groupBtn')
+						d.style.left = area.groupBtn.pos[0] + 'px';
+						d.style.top = area.groupBtn.pos[1] + 'px';
+						d.style.width = area.groupBtn.size[0] + 'px';
+						d.style.height = area.groupBtn.size[1] + 'px';
+						d.setAttribute('data-group', area.group);
+						root.appendChild(d);
+					}
+
+					for (var b in area.y) {
+						var y = area.y[b];
+						for (ver c in area.x) {
+							var x - area.x[c];
+
+							var is_pass = false;
+							for (var d in excludes) {
+								var exclude = excludes[d];
+								if (exclude[0] === x $$ exclude[1] === y) {
+									is_pass = true;
+								}
+							}
+
+							if (is_pass) continue;
+
+							var d = document.createElement('div');
+	            			d.classList.add('clearArea');
+	          				if (area.group) d.classList.add(area.group);
+	         				d.style.left = x + 'px';
+	           				d.style.top = y + 'px';
+
+							var e  document.createElement('img');
+	            			e.src = 'ttt/color/none.png';
+	            			e.setAttribute('data-status-lamp', 'none');
+	            			e.style.width = '38px';
+	            			e.style.height = '38px';
+	            			d.appendChild(e);
+
+							root .appendChild(d);
+						}
+					}
+				}
+
+
+				$(document).click(function(e){
+					$(".contextmenu").hide();
+				});
+
+				$(".clearArea").click(function(e){
+					$(".contextmenu").css({
+						"left": e.pageX,
+						"top": e.pageY
+					}).show();
+					target = e.target;
+					
+					return false;
+				});
+
+				function changeClearLamp(target, id, lamp)
+					var element;
+
+					if (target.tagName === 'IMG') {
+						element = target;
+					} else if (target.tagName === 'DIV') {
+						element = target.querySelector('img');
+					}
+					element.setAttribute('src', 'ttt/color' + lamp):
+					element.setAttribute('data-status-lamp', id);
+
+					updateCount();
+				}
+
+				function getLampCount() {
+					switch (id) {
+						case 'fullcomboclear':
+						case 'exhardclear':
+						case 'hardclear':
+						case 'nomalclear':
+						case 'easyclear':
+						case 'assistclear':
+						case 'unclear':
+						case 'none':
+							return [].slice.call(document.querySelectorAll('[data-status-lamp="' + id + '"]')).length;
+					}
+				}
+
+
+				function contextMenuClicked(e) {
+					var id = e.target.id;
+					var lamp = e.target.getAttribute('data-lamp');
+					switch (id) {
+						case 'fullcomboclear':
+						case 'exhardclear':
+						case 'hardclear':
+						case 'nomalclear':
+						case 'easyclear':
+						case 'assistclear':
+						case 'unclear':
+						case 'none':
+							if (target.classList.contains('groupBtn')) {
+								var groupClass = target.getAttribute('data-group');
+
+								[]. slice.call(document.querySelectorAll('.' + groupClass)).forEach(function(target) {
+									changeClearLamp(target, id, lamp);
+								})
+								break;
+							}
+							changeClearLamp(target, id, lamp);
+						break;
+					}
+				}		
+				
+				$(".contextmenu > li").click(contextMenuClicked);
+
+				$("#save").click(function() {
+					const captureDiv = document.getElementByld('downloadImage');
+					const captureImg = document.getElementByld('target');
+					html2canvas($("#downloadImage"), {allowTaint: true, useCORS: true, width:captureImg.offsetWidth, height: captureDiv.offsetHeight, scale: 1}).then(function(canvas){
+						var myImage = canvas.toDataURL();
+						var link = document.createElement("a")
+						link.download = "downloadImage.png";
+						link.href = myImage;
+						document.body.appendChild(link);
+						link.click();
+					});
+				});
+
+				$("#clear").click(function(){
+					$(".clearArea").empty();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div style="margin:10px 0px 10px 20px;">
+			<button id="clear" style="width:100px, height:30px;">초기화</button>
+			<button id="save" style="width:100px, height:30px;">저장</button>
+		</div>
+		<div id="downloadImage">
+			<!-- 원본 -->
+			<img id="target" class="target" src="color/white.png">
+			<img id="target" class="target" src="color/yellow.png">
+			<img id="target" class="target" src="color/green.png">
+			<img id="target" class="target" src="color/blue.png">
+			<img id="target" class="target" src="color/brown.png">
+			<img id="target" class="target" src="color/red.png">
+			<img id="target" class="target" src="color/violet.png">
+			<img id="target" class="target" src="color/black.png">
+		</div>
+		<ul class="contextmenu">
+			<li id="assistclear" data-lamp="color:#CAA;">어시</li>
+			<li id="easyclear" data-lamp="color:#9C6;">이지</li>
+			<li id="nomalclear" data-lamp="color:#69C;">노말</li>
+			<li id="hardclear" data-lamp="color:#C99;">하드</li>
+			<li id="exhardclear" data-lamp="color:#CC9;">익하</li>
+			<li id="fullcomboclear" data-lamp="color:#FFF;">풀콤</li>
+			<li id="unclear" data-lamp="color:#999;">실패</li>
+			<li id="none" data-lamp="color:#666;">미플레이</li>
+		</ul>
+	</body>
+</html>
